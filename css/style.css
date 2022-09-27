@@ -1,0 +1,951 @@
+*{
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+}
+
+/* -----------------------------------------------HERO PAGE---------------------------------- */
+#hero-page{
+    height: 100vh;
+    position: relative;
+    /* background-color: red; */
+    /* overflow; */
+}
+
+.nav-bar{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5rem;
+    /* background-color: orangered; */
+    width: 100%;
+    margin: 0 auto;
+    left: 50%;
+    transform: translateX(-50%); 
+    z-index: 1000;
+    /* height: fit-content; */
+    
+    
+}
+.nav-bar.active{
+    /* background-color: rgb(247, 14, 17); */
+    background-color: rgb(247, 14, 17);
+    color: white;
+    animation: navBg 1s ease-in-out normal forwards ;
+}
+@keyframes navBg{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.nav-logo {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+    /* background-color: orange; */
+    gap: 2rem;
+    /* margin-right: 3rem; */
+}
+.nav-links a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    transition: all 400ms ease-in-out;
+}
+.nav-links a:hover{
+    color: orange;
+}
+.burger-container{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    /* color: black; */
+    /* background-color: orangered; */
+    display: none;
+}
+
+.burger{
+    width: 2rem;
+    height: 0.3rem;
+    background-color: black;
+    margin: 0.3rem 0 0;
+    border-radius: 3rem;
+}
+
+.hero-section {
+    /* background-color: blue; */
+    display: flex;
+    width: 100%;
+}
+
+.hero-contents {
+    margin-top: 6rem;
+    padding: 0 4rem;
+    /* background-color: orchid; */
+    width: 50%;
+    overflow: hidden;
+}
+
+.hero-contents h5{
+    font-size: 1.2rem;
+    font-weight: lighter !important;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(247, 14, 17);
+    margin-bottom: 1rem;
+}
+
+.hero-contents h2{
+    font-size: 3.5rem;
+}
+
+.hero-contents button{
+    background-color: rgb(247, 14, 17);
+    border: none;
+    outline: none;
+    padding: 0.8rem 2rem;
+    border-radius: 2rem;
+    margin: 1rem 0;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.hero-icons {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.hero-icons img{
+    width: 5rem;
+}
+.hero-icons p{
+    text-align: center;
+}
+.hero-image{
+    height: 100vh;
+    width: 60%;
+    background-color: green;
+    overflow: hidden;
+    
+}
+.hero-image img{
+    display: block;
+    /* margin: 0 auto; */
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* -------------------------------------------------------MENU PAGE--------------------------------------------------------- */
+#menu-page{
+    margin: 0;
+    padding: 4rem 4rem;
+    background-color: rgb(209, 209, 209);
+}
+.menu-title{
+    font-size: 1.4rem;
+    font-weight: lighter  !important;
+    /* margin-bottom: 0.8rem; */
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(247, 14, 17);
+}
+.menu-selection{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+}
+.menu-selection h1{
+    font-size: 2.5rem;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgba(0,0,0,0.7);
+    /* margin: 2rem 0; */
+}
+.menu-type{
+    display: flex;
+    gap: 0.9rem;
+    font-size: 1.2rem;
+    
+}
+.menu-type p.active{
+    color: orange;
+}
+.soups, .continental-dishes{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 4rem;
+    row-gap: 2rem;
+    margin: 1rem 0;
+    animation: displayFood 1s ease-in-out normal;
+    /* display: none; */
+}
+
+@keyframes displayFood {
+    from {
+        opacity: 0.2;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.soup, .continental-dish{
+    display: flex;
+    gap: 0.3rem;
+}
+.soup-img, .continental-dish-img{
+    height: 11rem;
+    width: 18rem;
+    overflow: hidden;
+}
+.soup-img img, .continental-dish-img img{
+    height: 100%;
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+.soup-content, .continental-dish-content{
+    background-color: white;
+    width: 15rem;
+    padding: 2rem;
+    text-align: center;
+}
+.soup-content h3, .continental-dish-content h3{
+    margin-bottom: 1rem;
+}
+.soup-content p, .continental-dish-content p{
+    line-height: 1.5rem;
+}
+.soup-price, .continental-dish-price {
+    color: rgb(247, 14, 17);
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-left: 0.3rem;
+}
+
+.continental-dishes{
+    margin: 1rem 0;
+    display: none;
+}
+
+/* --------------------------------------------------ABOUT PAGE---------------------------------------- */
+#about-page{
+    padding: 5rem 4rem 0;
+}
+.about-section{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    /* background-color: peru; */
+}
+.about-image{
+    position: relative;
+    /* background-color: orchid; */
+    /* overflow: hidden; */
+    height: 480px;
+    width: 520px;
+}
+.about-img1{
+    width: 350px;
+    height: 350px;
+}
+.about-img1 img{
+    height: 100%;
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+    display: block;
+}
+.about-img2{
+    position: absolute;
+    top: 200px;
+    width: 250px;
+    height: 250px;
+    left: 250px;
+    /* height: 600px; */
+}
+.about-img2 img{
+    height: 100%;
+    width: 100%;
+    object-position: center;
+    object-fit: cover;
+    display: block;
+}
+.about-contents{
+    padding: 2.5rem 0;
+}
+.about-title p{
+    font-size: 1.4rem;
+    font-weight: lighter  !important;
+    /* margin-bottom: 0.8rem; */
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(247, 14, 17);
+}
+.about-title h1{
+    font-size: 2rem;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgba(0,0,0,0.7);
+    margin-bottom: 0.7rem;
+}
+.about-body{
+    line-height: 1.5rem;
+    letter-spacing: 0.07rem;
+}
+
+/* -------------------------------------------------------RECORD SECTION----------------------------------------- */
+#record-page{
+    background:linear-gradient(rgba(0,0,0,0.3), rgb(0,0,0,0.5)), url(../images/food-bg.jpg);
+    padding: 4rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* height: 80px; */
+    background-attachment: fixed;
+
+}
+.record-section{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+   color: white;
+    /* background-color: orange; */
+    padding: 3rem 0;
+    gap: 2rem;
+}
+.experience{
+    /* background-color: red; */
+}
+.record-img{
+    width: 4rem;
+    height: 4rem;
+    background-color: white;
+    padding: 0.7rem;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+.record-img img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+.record-section p{
+    font-size: 1.3rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+/* ----------------------------------------------TESTIMONIAL SECTION------------------------------------- */
+#testimonials-page{
+    background-color: #efefef;
+    padding: 2rem 4rem;
+}
+.testimonials{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    
+    /* background-color: green; */
+}
+.testimonial-slider-container{
+    /* max-width: 600px; */
+    background-color: brown;
+    display: flex;
+    gap: 1rem;
+    padding: 40px 0;
+    margin: 0 auto;
+    
+}
+.testimonial-slide-content{
+    width: 300%;
+    gap: 2rem;
+    background-color: gold;
+    display: flex;
+    justify-content: space-between;
+}
+.testimonial-card, .testimonial-card3{
+    width: 300px;
+    border-radius: 25px;
+    background-color: white;
+    margin: 0 auto;
+
+}
+.testimonial-card3 {
+    display: none;
+}
+.testimonial-image-content, .testimonial-card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.testimonial-image-content{
+    position: relative;
+    row-gap: 20px;
+    padding: 10px 0;
+    /* background-color: blue; */
+}
+.testimonial-card-content{
+    /* background-color: orangered; */
+    position: relative;
+    padding: 1.5rem 1rem;
+}
+.overlay{
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: orange;
+    border-radius: 25px 25px 0 25px;
+}
+.testimonial-card-image{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    background-color: white;
+    border-radius: 50%;
+    padding: 3px;
+
+}
+
+.testimonial-card-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    display: block;
+    border: 4px solid rgb(247, 14, 17);
+    opacity: 1;
+    /* margin: 0.2rem 0; */
+    animation: displayImg 1s forwards ease-in-out;
+    transition: all  5s ease-in-out;
+    
+}
+@keyframes displayImg {
+    from {
+        opacity: 0;
+    }
+    t0 {
+        opacity: 1;
+    }
+}
+.name{
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+}
+.description{
+    font-size: 14px;
+    color: #707070;
+    text-align: center;
+}
+.card-box1{
+    position: absolute;
+    right: 0;
+    top: 0;
+    /* bottom: -40px; */
+    height: 40px;
+    width: 40px;
+    background-color: orange;
+}
+.card-box2{
+    position: absolute;
+    right: 0;
+    top: 0;
+    /* bottom: -40px; */
+    height: 40px;
+    width: 40px;
+    border-radius: 0 25px 0 0;
+    background-color: white;
+    z-index: 100;
+}
+.dots {
+    display: flex;
+    align-items: center;
+    margin: 5rem auto 3rem;
+    justify-content: center;
+    gap: 10px;
+}
+.dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: rgb(134, 139, 143);
+}
+
+.read-more {
+    background-color: rgb(247, 14, 17);
+    border: none;
+    outline: none;
+    display: block;
+    margin: auto;
+    padding: 0.6rem 3rem;
+    color: white;
+    font-size: 600;
+}
+
+
+/* ---------------------------------------------------ORDER SECTION------------------------------------------- */
+#order-page{
+    padding: 2rem 6rem 2rem 4rem;
+}
+.order-section{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    /* align-items: center; */
+}
+.order-content{
+    margin-top: 5rem;
+}
+.order-title p{
+    font-size: 1.4rem;
+    font-weight: lighter  !important;
+    /* margin-bottom: 0.8rem; */
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(247, 14, 17);
+}
+.order-title h1{
+    font-size: 2rem;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgba(0,0,0,0.7);
+    margin-bottom: 0.7rem;
+}
+.order-body{
+    line-height: 1.5rem;
+    letter-spacing: 0.07rem;
+}
+.form-container{
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url(../images/restaurant3.jpg);
+    background-position: center;
+    background-size: cover;
+    padding: 2rem;
+}
+
+ .form-container h3{
+    text-align: center;
+    margin: 1rem 0 0.3rem;
+    font-size: 2rem;
+    color: orange;
+ }
+ form{
+     /* background-color: blue; */
+ }
+
+.form-container select, .form-container input[type = number]{
+    display: block;
+    margin: 0.5rem auto; 
+    width: 20rem;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    /* backgroun */
+    /* width: 100%; */
+}
+
+.form-container input[type = submit]{
+    background-color: rgb(247, 14, 17);
+    border: none;
+    outline: none;
+    display: block;
+    padding: 0.9rem 2rem;
+    border-radius: 2rem;
+    margin: 1rem auto;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* .order-section input, select {
+    display: block;
+    margin: 0 auto;
+} */
+
+/* -------------------------------------FOOTER SECTION-------------------------------------------------- */
+#footer-page{
+  min-height: 60vh;  
+  background-color: rgb(38, 38, 38);
+  color: white;
+  padding: 2rem 4rem;
+}
+.footer-section{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+.footer-title{
+    margin-bottom: 1.5rem;
+    color: white
+}
+.footer-about-content {
+    color: rgb(134, 139, 143);
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.day-time-open{
+    display: flex;
+    gap: 2rem;
+    color: rgb(134, 139, 143);
+    justify-content: center;
+    align-items: center;
+}
+.sub-contact{
+    margin-bottom: 1rem;
+}
+.contact-title{
+    color: rgb(134, 139, 143);
+}
+.newsletter-form input[type = text]{
+    display: block;
+    background-color: rgb(44, 42, 43);
+    padding: 0.7rem 1rem;
+    border: none;
+    outline: none;
+    text-align: center;
+    margin:0 auto 0.5rem;
+    width: 100%;
+    color: white;
+    
+}
+
+.newsletter-form input[type = submit] {
+    display: block;
+    width: 100%;
+    background-color: rgb(247, 14, 17);
+    border: none;
+    outline: none;
+    padding: 0.7rem 1rem;
+    color: white;
+    font-weight: bold;
+    margin: auto;
+    
+}
+.newsletter p{
+    margin-bottom: 1rem;
+    
+}
+
+/* -------------------------------------------MEDIA-QUERY FOR ANDROID PHONES----------------------------- */
+@media screen and (max-width : 600px){
+    /* --------------------------------HERO SECTION------------------------------- */
+    #hero-page{
+        background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.3)), url(../images/oha-img1.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: fit-content;
+        overflow: hidden;
+        /* padding: 0.5rem 0; */
+        padding-bottom: 0;
+    }
+    .hero-section {
+        padding-bottom: 0;
+    }
+    .nav-bar{
+        padding: 0;
+        width: 100%;
+        overflow:visible;
+        height: fit-content;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+        
+    }
+    .nav-logo{
+        background-color: orange;
+        padding: 0.5rem 2rem;
+        width: 100%;
+    }
+    
+    
+    .nav-links{
+       background-color: transparent;
+        width: 100%;
+        display: none;
+        opacity: 0;
+        animation: navLinksAnim 1s forwards ease-in-out;
+        margin: 0;
+        height: fit-content;
+        overflow: visible;
+        gap: 0;
+        
+    }
+    @keyframes navLinksAnim {
+        from{
+            opacity: 0.7;
+        }to {
+            opacity: 1;
+        }
+    }
+    .nav-links.active{
+        opacity: 1; 
+        /* border: 5px soid black; */
+        background-color: rgb(247, 14, 17);
+        display: flex;
+        flex-direction: column;
+        /* gap: 0.5rem; */
+    }
+    .nav-links li {
+        text-align: center;
+        margin: 0 0;
+        display: block;
+    }
+    .nav-links a{
+        display: block;
+        text-decoration: none;
+        color: white;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid black;
+    }
+    .nav-links a:hover{
+        color: orange;
+    }
+
+    .burger-container{
+        display: block;
+        
+    }
+    .hero-section{
+        display: block;
+        margin: 7rem 0;
+        /* padding: 0 4rem; */
+        /* background-color: orange; */
+        overflow: hidden;
+        
+    }
+    .hero-contents{
+        /* background-color: green; */
+        width: 100%;
+        /* overflow: hidden; */
+        padding: 0;
+        margin: 0;
+    }
+    .hero-contents h5{
+        text-align: center;
+        font-size: 1.6rem;
+    }
+    .hero-contents h2{
+        text-align: center;
+        font-size: 2.5rem;
+        color: white;
+    }
+    .hero-contents button {
+        display: block;
+        margin: 2rem auto;
+        width: 200px;
+        font-size: 1.1rem;
+       
+    }
+    .hero-icons {
+        /* background-color: green; */
+        gap: 2.5rem;
+        margin: 5rem auto 0;
+        padding: 0.5rem;
+    }
+    .hero-icons div{
+        background-color: white;
+        padding: 0.3rem;
+        border-radius: 50%;
+    }
+    /* .hero-icons div{
+        margin: 1rem auto;
+    } */
+
+    .hero-icons img{
+        width: 4rem;
+        height: 4rem;
+        display: block;
+        margin: 0 auto;
+        /* color: white; */
+    }
+    .hero-icons p{
+        color: rgb(247, 14, 17);
+        font-weight: 800;
+    }
+    .hero-image{
+        display: none;
+    }
+
+    /* ------------------------------------------------MENU SECTION---------------------------------- */
+    #menu-page{
+        padding: 2rem;
+    }
+    .menu-title{
+        text-align: center;
+    }
+    .menu-selection{
+        display: block;
+    }
+    .menu-selection h1{
+        font-size: 1.7rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    .menu-type{
+        text-align: center;
+        /* justify-content: space-evenly; */
+        /* background-color: yellow; */
+    }
+    
+    .menu-type p{
+        text-align: center;
+        width: 90%;
+        font-size: 1.1rem;
+        /* background-color: orchid; */
+    }
+    
+    .soups, .continental-dishes{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .soup, .continental-dish{
+        flex-direction: column;
+        gap : 0.2rem;
+        background-color: orange;
+        margin: 0 auto;
+    }
+    .soup-img, .continental-dish-img{
+        height: 11rem;
+        width: 20rem;
+        overflow: hidden;
+    }
+    .soup-content, .continental-dish-content{
+        width: 20rem;
+        padding: 1rem 0 ;
+    }
+    .soup-content h3, .continental-dish-content h3{
+        font-size: 1.5rem;
+        margin-bottom: 0.6rem;
+        /* background-color: orange; */
+        text-align: center;
+    }
+    .soup-content p, .continental-dish-content p{
+        line-height: 1.2rem;
+        max-width: 70%;
+        /* background-color: green; */
+        margin: 0 auto;
+        text-align: center;
+    }
+    .continental-dishes{
+        display: none;
+    }
+    /* --------------------------------------------------------------ABOUT SECTION-------------------------------------------------------- */
+    #about-page{
+        padding: 4rem 2rem;
+    }
+    .about-section{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 2rem;
+        /* background-color: peru; */
+        padding: 1rem 0;
+    }
+    .about-image{
+        position: relative;
+        /* background-color: orchid; */
+        /* overflow: hidden; */
+        height: 400px;
+        width: 350px;
+        margin: 0 auto;
+    }
+    .about-img1{
+        width: 300px;
+        /* height: 350px; */
+    }
+    .about-img2{
+        top: 200px;
+        width: 180px;
+        height: 190px;
+        left: 160px;
+        /* height: 600px; */
+    }
+    .about-contents{
+        padding: 1rem 0;
+    }
+    
+
+    /* -------------------------------------------RECORD SECTION-------------------------------------------------------------- */
+    #record-page{
+        padding: 4rem 2rem;
+    }
+    .record-section{
+        grid-template-columns: repeat(1, 1fr);
+        padding: 1rem;
+        gap: 4rem;
+    }
+    .record-section p{
+        font-size: 1.4rem;
+        font-weight: 900;
+        text-align: center;
+    }
+    
+    /* -------------------------------------------------------------TESTIMONIAL SECTION------------------------------- */
+    .testimonial-card {
+        display: none;
+    }
+    .testimonial-card3 {
+        display: block;
+    }
+
+    /* -----------------------------------------------ORDER SECTION--------------------------------------------------------------------- */
+    #order-page{
+        padding: 4rem 2rem;
+    }
+    .order-section{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 3rem;
+        /* align-items: center; */
+    }
+    .order-content{
+        margin-top: 0;
+    }
+    .order-title p{
+        margin-bottom: 0.3rem;
+    }
+    .order-title h1{
+        font-size: 1.7rem;
+    }
+    .form-container select, .form-container input[type = number]{
+        display: block;
+        margin: 0.5rem auto; 
+        width: 16rem;
+        
+    }
+    .form-container{
+       padding: 2rem 1rem;
+    }
+
+    /* -----------------------------------------FOOTER SECTION-------------------------------------- */
+    .footer-section{
+        grid-template-columns: repeat(1, 1fr);
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-title{
+        margin-bottom: 1rem;
+    }
+    
+    
+     
+}
